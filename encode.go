@@ -483,8 +483,8 @@ func (enc *Encoder) keyEqElement(key Key, val reflect.Value) {
 
 func (enc *Encoder) writeMultiLineString(s string, raw bool) {
 	//if there are any windows style CRLF terminations, replace them with newlines and then split
-	s = strings.Replace(s, "\r\n", "\n", -1)
-	lines := strings.Split(s, "\n")
+	//s = strings.Replace(s, "\r\n", "\n", -1)
+	//lines := strings.Split(s, "\n")
 
 	var marker string
 	if raw {
@@ -494,13 +494,10 @@ func (enc *Encoder) writeMultiLineString(s string, raw bool) {
 	}
 
 	enc.wf(marker) //triple quote to start multiline string
-	for _, line := range lines {
-		enc.newline() //spec: decoder must remove \n if after triple quote
-		if raw {
-			enc.wf(line)
-		} else {
-			enc.wf(quotedReplacer.Replace(line)) //quote the rest of the characters
-		}
+	if raw {
+		enc.wf(s + " ")
+	} else {
+		enc.wf(quotedReplacer.Replace(s)) //quote the rest of the characters
 	}
 	enc.wf(marker)
 }
