@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/BurntSushi/toml"
+	"github.com/ggyyjjjia/toml"
 )
 
 func init() {

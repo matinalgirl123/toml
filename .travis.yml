@@ -5,7 +5,7 @@ go:
   - tip
 install:
   - go install ./...
-  - go get github.com/BurntSushi/toml-test
+  - go get github.com/ggyyjjjia/toml-test
 script:
   - export PATH="$PATH:$HOME/gopath/bin"
   - make test

@@ -11,18 +11,18 @@ Spec: https://github.com/mojombo/toml
 Compatible with TOML version
 [v0.2.0](https://github.com/mojombo/toml/blob/master/versions/toml-v0.2.0.md)
 
-Documentation: http://godoc.org/github.com/BurntSushi/toml
+Documentation: http://godoc.org/github.com/ggyyjjjia/toml
 
 Installation:
 
 ```bash
-go get github.com/BurntSushi/toml
+go get github.com/ggyyjjjia/toml
 ```
 
 Try the toml validator:
 
 ```bash
-go get github.com/BurntSushi/toml/cmd/tomlv
+go get github.com/ggyyjjjia/toml/cmd/tomlv
 tomlv some-toml-file.toml
 ```
 
@@ -32,7 +32,7 @@ tomlv some-toml-file.toml
 ### Testing
 
 This package passes all tests in
-[toml-test](https://github.com/BurntSushi/toml-test) for both the decoder
+[toml-test](https://github.com/ggyyjjjia/toml-test) for both the decoder
 and the encoder.
 
 ### Examples
