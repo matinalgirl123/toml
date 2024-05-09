@@ -4,12 +4,12 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/matinalgirl123/toml"
 	"log"
 	"os"
 	"path"
 	"strings"
 	"text/tabwriter"
-	"tomlProject/toml"
 )
 
 var (

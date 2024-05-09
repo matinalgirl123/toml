@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/matinalgirl123/toml"
 	"time"
-	"tomlProject/toml"
 )
 
 type tomlConfig struct {
