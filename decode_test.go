@@ -21,14 +21,14 @@ now = 1987-07-05T05:45:00Z
 yesOrNo = true
 pi = 3.14
 colors = [
-	["red", "green", "blue"],
 	["cyan", "magenta", "yellow", "black"],
 ]
 
-[My.Cats]
+[MyCats]
 plato = "cat 1"
 cauchy = "cat 2"
 `
+	//异常 ["red", "\\u4\u0007string", "blue"],
 
 	type cats struct {
 		Plato  string

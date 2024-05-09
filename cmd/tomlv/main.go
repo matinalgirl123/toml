@@ -9,8 +9,7 @@ import (
 	"path"
 	"strings"
 	"text/tabwriter"
-
-	"github.com/ggyyjjjia/toml"
+	"tomlProject/toml"
 )
 
 var (

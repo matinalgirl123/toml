@@ -2,7 +2,7 @@ package toml
 
 import (
 	"fmt"
-	"log"
+	"github.com/wonderivan/logger"
 	"strconv"
 	"strings"
 	"time"
@@ -38,15 +38,11 @@ func (pe parseError) Error() string {
 }
 
 func parse(data string) (p *parser, err error) {
-	defer func() {
-		if r := recover(); r != nil {
-			var ok bool
-			if err, ok = r.(parseError); ok {
-				return
-			}
-			panic(r)
-		}
-	}()
+	//defer func() {
+	//	if r := recover(); r != nil {
+	//		return nil,r
+	//	}
+	//}()
 
 	p = &parser{
 		mapping:   make(map[string]interface{}),
@@ -81,7 +77,8 @@ func (p *parser) next() item {
 }
 
 func (p *parser) bug(format string, v ...interface{}) {
-	log.Fatalf("BUG: %s\n\n", fmt.Sprintf(format, v...))
+	//2023-5-8需要抛出异常
+	logger.Painc("BUG: %s\n\n", fmt.Sprintf(format, v...))
 }
 
 func (p *parser) expect(typ itemType) item {
