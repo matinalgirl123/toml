@@ -417,16 +417,16 @@ func (p *parser) replaceUnicode(s string) string {
 	}
 	for i := indexEsc(); i != -1; i = indexEsc() {
 		asciiBytes := s[i+2 : i+6]
-		s = strings.Replace(s, s[i:i+6], p.asciiEscapeToUnicode(asciiBytes), -1)
+		s = strings.Replace(s, s[i:i+6], p.asciiEscapeToUnicode(asciiBytes, s), -1)
 	}
 	return s
 }
 
-func (p *parser) asciiEscapeToUnicode(s string) string {
+func (p *parser) asciiEscapeToUnicode(s, s1 string) string {
 	hex, err := strconv.ParseUint(strings.ToLower(s), 16, 32)
 	if err != nil {
-		p.bug("Could not parse '%s' as a hexadecimal number, but the "+
-			"lexer claims it's OK: %s", s, err)
+		p.bug("Could not parse '%s'(%s) as a hexadecimal number, but the "+
+			"lexer claims it's OK: %s", s, s1, err)
 	}
 
 	// BUG(burntsushi)
